@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #ffeef8;
+  text-align: center;
+  touch-action: manipulation;
+}
+
+#game-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#game-canvas {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #ff88bb;
+  background-color: #ffffff;
+}
