@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalp Toplama Oyunu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ana Sayfa Ekranı -->
+<div id="start-screen">
+  <h1 class="game-title">💘 HAYATIMIN ANLAMINA MİNİK BİR HEDİYE 💘</h1>
+  <button id="start-button">Oyuna Başla</button>
+  <style>
+    #start-screen {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, #ffe4ec, #fff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+  
+    .game-title {
+      font-size: 64px;
+      color: #d63384;
+      margin-bottom: 40px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-shadow: 1px 1px 2px #aaa;
+    }
+  
+    #start-button {
+      font-size: 36px;
+      padding: 10px 20px;
+      border: none;
+      background: #ff69b4;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+  
+    #start-button:hover {
+      background: #ff85c1;
+    }
+  </style>
+  
+</div>
+
+
+  <canvas id="game-canvas" width="480" height="320"></canvas>
+  <style>
+  canvas {
+    image-rendering: pixelated;
+  }
+</style>
+
+  <div id="pause-menu">
+    ⏸️ OYUN DURDU<br>
+    <small>Devam etmek için ESC tuşuna bas</small><br><br>
+    <button onclick="restartGame()">🔁 Yeniden Başla</button><br><br>
+    <button onclick="toggleSound()">🔊 Sesi Aç / Kapat</button><br><br> 
+    <button onclick="goToMainMenu()">🏠 Ana Menü</button>
+  </div> 
+  
+
+  <div id="score-board">
+    <div id="score-title">🎉 YENİ YAŞINA SON 🎂</div>
+    <span id="heart-emoji">❤️</span>
+    <span id="heart-count">0</span> / 💘 <span id="target-score">22</span>
+
+    <div class="score-decor top-right">🎀</div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div id="alert-effect">💔DOĞRU KALPLERİ YAKALİCAN ORUSPİ!💔</div>
+  <audio id="bg-music" src="melody.mp3" loop></audio>
+
+  <script src="script.js"></script>
+  <audio id="bloop-sound" src="bloop.mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="wrong.mp3" preload="auto"></audio>
+
+  
+
+  
+  
+
+</body>
+</html>

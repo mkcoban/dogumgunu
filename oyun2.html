@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sürpriz 🎁</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom, #ffe4ec, #fff);
+      color: #d63384;
+      text-align: center;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    #start-button {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 22px;
+      padding: 14px 28px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.05); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    .container {
+      display: none;
+      padding: 60px 20px 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #aaa;
+    }
+
+    .message {
+      font-size: 20px;
+      white-space: pre-line;
+      margin: 20px auto 40px;
+      max-width: 90%;
+      line-height: 1.6;
+    }
+
+    .cake {
+      font-size: 72px;
+      margin-bottom: 10px;
+    }
+
+    .characters {
+      font-size: 48px;
+    }
+
+    #back-button {
+      margin-top: 40px;
+      font-size: 18px;
+      padding: 12px 24px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    #back-button:hover {
+      background-color: #ff85c1;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="start-button">💌 Sürpriz için tıkla</button>
+
+  <div class="container" id="final-container">
+    <h1>🎉 Mutlu Yıllar Aşkım! 🎉</h1>
+
+    <div class="message" id="final-message"></div>
+
+    <div class="cake">🎂</div>
+    <div class="characters">🧍‍♀️❤️🧍‍♂️</div>
+
+    <button id="back-button" onclick="goBack()">🔁 En baştan oyna</button>
+
+    <audio id="final-music" autoplay loop>
+      <source src="final-music.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <script>
+    document.getElementById("start-button").addEventListener("click", () => {
+      // Butonu gizle
+      document.getElementById("start-button").style.display = "none";
+
+      // Mesajı yaz
+      const message = `Bebekkam,
+İyi ki doğdun…
+Valla ne desem bilmiyorum, içimden geçenleri bir türlü tam anlatamıyorum ama deneyeceğim.
+Son zamanlarda seni üzdüm, kırdım… Belki de en son yapmam gereken şeyleri yaptım. Ama sen yine de bana döndün…
+İşte bu yüzden, seni her şeyden çok seviyorum.
+Seninle olmak bana her şeyi unutturuyor. Gülüşün, sesin, dokunuşun… hepsi iyi geliyor.
+Birlikte yaşadığımız güzel anılar da, zor zamanlar da var… ama sen yanımdayken hepsi daha kolay, hepsi daha anlamlı.
+Doğum günün kutlu olsun yavrum.
+Dilerim hep birlikte olalım, her yaşını birlikte kutlayalım.
+Seni çok seviyorum hayatım…
+Hem de her şeyden çok.`;
+
+      document.getElementById("final-message").textContent = message;
+
+      // İçeriği göster
+      document.getElementById("final-container").style.display = "block";
+
+      // Müziği başlat ve 30. saniyeye al
+      const music = document.getElementById("final-music");
+      music.currentTime = 30;
+      music.play().catch(() => {});
+    });
+
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
