@@ -413,7 +413,7 @@ heartEmoji.classList.add("animate"); // sonra tekrar ekle
   });
 
   // Skor 22 olunca yeni sayfaya geç
-  if (score >= 22) {
+  if (score >= 3) {
   window.location.href = "oyun2.html"; // yönlendirme yapılacak sayfa
   }
 
